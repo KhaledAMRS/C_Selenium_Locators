@@ -1,0 +1,114 @@
+The general syntax of Xpath is
+//TagName[@attribute="value"]
+
+//          >    Select current node.
+Tagname     >    Tagname of the particular node.
+@           >    Select attribute.
+Attribute   >    Attribute name of the node.
+Value       >    Value of the attribute.
+
+===========================================================================================
+it's allowed to locate text() using Xpath unlike CssSelector  (not allowed with CssSelector)
+
+for example, "SignIn button"
+//button[text()="SignIn"]
+
+Note: you don't use @ and use () after text
+
+===========================================================================================
+
+First we need to understand where this syntax comes from
+
+Absolute XPath:
+It is the direct way to find the element, it begins with the single forward slash(/)
+which means you can select the element from the root node.
+
+/html/body/div[2]/div[@class='featured-box cloumnsize1']/h2[1]/a[1]/b[1]
+
+Relative Xpath:
+It starts from the middle of HTML DOM structure. It starts with double forward slash (//).
+It can search elements anywhere on the webpage without starting from the root node
+
+//div[@class='featured-box cloumnsize1']/h2[1]//b[1]
+
+Note:
+in case of direct parent then use /
+in case of indirect parent then use //
+
+===========================================================================================
+The disadvantage of the absolute XPath is that if there are any changes made in the path of the element then that XPath gets failed.
+
+Relative Xpath is always preferred as it is not a complete path from the root element.
+
+===========================================================================================
+1- partial attribute values using Contains()
+
+It is used when the value of any attribute changes dynamically,
+for example, id="username_weqafgrerg"
+pretend that this part weqafgrerg is changed after each time you refresh the website
+so you need to define the element with part of id
+
+//input[starts-with(@id,"username")]
+//input[contains(@id,"username")]
+
+===========================================================================================
+
+2- To locate element with two attributes or more (Logical operators in selections)
+//input[@type="text" and @name="username"]
+
+Note:
+you could also use 'or' instead of 'and'
+//input[@type="text" or @name="username"]
+
+It's not recommended
+cuz this will find all elements where @type="text" + all elements where @name="username"
+so most probably you will find more than one search result
+
+as we mentioned it's not recommended, you just need to have an idea about this to distinguish between what you're supposed to use
+and what you are not recommended to use
+===========================================================================================
+3- Locate elements using ancestors
+
+//parentTag[@attribute="value"]//Tag[@attribute="value"]
+
+===========================================================================================
+
+4- Special Cases
+
+4.1-
+Instead of tagname you could use *
+//*[@name="username"]
+which means select any element contains name equal username whatever tagname is
+
+For example if you have two elements in your DOM Page like this
+//input[@type='text']
+//a[@type='text']
+that mean it will find two results  input & a elements
+
+
+4.2-
+Instead of key you could use *
+//*[@*="username"]
+which means select any element contains attribute value equal username whatever tagname is and attribute name is
+
+
+but it's not recommended (like using or)
+cuz this will select too many elements which having attribute value equal "username"
+
+as we mentioned, you just need to have an idea about this to distinguish between what you're supposed to use
+and what you are not recommended to use
+
+===========================================================================================
+##  Advanced Xpath
+5- Xpath axes   like (following, Preceding, Descendant)
+
+check all possible XPath Axes in this link
+https://www.softwaretestinghelp.com/xpath-axes-tutorial/
+
+
+other links (optional):
+read this topic "Xpath axes" inside this link
+https://www.guru99.com/using-contains-sbiling-ancestor-to-find-element-in-selenium.html
+
+also read this topic "How to write Xpath in Selenium using Axes methods?" inside this link
+https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/

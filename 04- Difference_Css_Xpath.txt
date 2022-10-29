@@ -1,0 +1,18 @@
+There are some differences between xpath and css:
+
+## Advantages of Xpath over Css Selector
+* Xpath allows bidirectional flow which means the traversal can be both ways from parent to child and child to parent as well.
+Css allows only one directional flow which means the traversal is from parent to child only.
+
+* Xpath allows identification with the help of visible text appearing on screen with the help of text() function.
+Css does not have this feature.
+
+* There are two types of xpath – absolute and relative. But css has no such types.
+
+============================================================================
+## Advantages of Css Selector over Xpath
+* Xpath is slower in terms of performance and speed.
+Css has better performance and speed than xpath.
+(Css is better)
+
+* XPath engines are different in each browser, making them inconsistent

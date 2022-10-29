@@ -1,0 +1,54 @@
+Any Element in "HTML DOM Page" could consist of
+Document Object Model
+
+
+<tagName attributes>                         child + text  </tagName>
+<button class="radius" type="submit">       <i class="fa fa-2x fa-sign-in"> Login</i></button>
+
+
+ 1- Start Tag
+    1.1- tagName
+    1.2- attributes
+		1.2.1- Key
+		1.2.2- Value
+ 2- child + content
+ 3- End Tag
+
+
+Example:
+
+     <div class="large-6 small-12 columns">
+         <label for="username">Username</label>
+         <input type="text" name="username" id="username">
+     </div>
+
+1- This element div consist of
+    - Start Tag
+        - attributes
+          	- Key:      class
+          	- Value:    "large-6 small-12 columns"
+    - 2 child (label, input)
+    - not contains content
+    - End Tag
+
+2- This element label consist of
+    - Start Tag
+        - attributes
+          	- Key:      for
+          	- Value:    "username"
+    - this element is not parent to anyone (no child)
+    - content is Username
+    - End Tag
+
+
+=========================================================
+Selenium Locators
+	* Attribute
+		- ID
+		- Name
+		- Class
+		- Link Text
+
+	* Syntaxes
+		- Css Selector
+		- Xpath
