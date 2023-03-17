@@ -4,27 +4,27 @@ TagName[attribute="value"]
 ===========================================================================================
 1-partial attribute values using
 
-*=		Locate a web element using the contains text whether it's Starting or Ending
-^=		Locate a web element using the Starting text
-$=		Locate a web element using the Ending text
+*	Locate a web element using the contains text whether it's Starting or Ending
+^	Locate a web element using the Starting text
+$	Locate a web element using the Ending text
 
-Tag[attribute*="value"]
+Tag[attribute*="partial value"]
 
 ===========================================================================================
 2- To locate element with two attributes or more
 Note: Texts are not allowed with CssSelectors
 
-Tag[attribute 1=value 1][attribute 2=value 2]
+Tag[key1="value1"][key2="value2"][key3="value3"]
 
 ===========================================================================================
 3- Locate elements using ancestors      // Note: you should leave space between the ancestor and the element
 
-parentTag[attribute="value"] Tag[attribute="value"]
+parentTag[key="value"] ChildTag[key="value"]
 
 
 spcial case: if the element is direct parent to the child you could write it in both ways
 
-directparentTag[attribute="value"] > Tag[attribute="value"]		or        directparentTag[attribute="value"] Tag[attribute="value"]
+directparentTag[attribute="value"]>Tag[attribute="value"]		or        directparentTag[attribute="value"] Tag[attribute="value"]
 
 ===========================================================================================
 4- :nth-child(num)
